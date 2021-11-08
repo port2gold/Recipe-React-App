@@ -13,6 +13,7 @@ const [query, setQuery] = useState('chicken');
    useEffect(()=>{
     getRecipes();
   }, [query]); 
+  
   const getRecipes = async () => {
     const response = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${App_ID}&app_key=${App_KEY}`);
     const data = await response.json();
